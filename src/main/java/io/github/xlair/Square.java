@@ -165,7 +165,7 @@ public class Square {
          * @param width distance from x to other point.
          * @return Builder
          */
-        Builder width(long width) {
+        public Builder width(long width) {
             this.width = width;
             return this;
         }
@@ -176,7 +176,7 @@ public class Square {
          * @param height distance from y to other point.
          * @return Builder
          */
-        Builder height(long height) {
+        public Builder height(long height) {
             this.height = height;
             return this;
         }
@@ -186,7 +186,7 @@ public class Square {
          * 
          * @return Square
          */
-        Square build() {
+        public Square build() {
             return new Square(x, y, width, height);
         }
     }

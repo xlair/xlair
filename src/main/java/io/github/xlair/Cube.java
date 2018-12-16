@@ -204,7 +204,7 @@ public class Cube {
          * @param width
          * @return builder
          */
-        Builder width(long width) {
+        public Builder width(long width) {
             this.width = width;
             return this;
         }
@@ -215,7 +215,7 @@ public class Cube {
          * @param height
          * @return builder
          */
-        Builder height(long height) {
+        public Builder height(long height) {
             this.height = height;
             return this;
         }
@@ -226,7 +226,7 @@ public class Cube {
          * @param depth
          * @return builder
          */
-        Builder depth(long depth) {
+        public Builder depth(long depth) {
             this.depth = depth;
             return this;
         }
@@ -236,7 +236,7 @@ public class Cube {
          * 
          * @return cube instance
          */
-        Cube build() {
+        public Cube build() {
             return new Cube(x, y, z, width, height, depth);
         }
     }

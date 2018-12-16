@@ -27,10 +27,7 @@ public class Xlair {
      * @return result
      */
     public static boolean isOverlapOrContact(long s1, long e1, long s2, long e2) {
-        if ((Math.min(s2, e2) > Math.max(s1, e1)) || (Math.max(s2, e2) < Math.min(s1, e1))) {
-            return false;
-        }
-        return true;
+        return !((Math.min(s2, e2) > Math.max(s1, e1)) || (Math.max(s2, e2) < Math.min(s1, e1)));
     }
 
     /**
@@ -46,10 +43,7 @@ public class Xlair {
      * @return result
      */
     public static boolean isOverlap(long s1, long e1, long s2, long e2) {
-        if ((Math.min(s2, e2) >= Math.max(s1, e1)) || (Math.max(s2, e2) <= Math.min(s1, e1))) {
-            return false;
-        }
-        return true;
+        return !((Math.min(s2, e2) >= Math.max(s1, e1)) || (Math.max(s2, e2) <= Math.min(s1, e1)));
     }
 
     /**
