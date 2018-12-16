@@ -1,0 +1,16 @@
+language: java
+jdk:
+  - oraclejdk8
+addons:
+cache:
+  directories:
+    - $HOME/.m2
+install:
+  - export CODACY_COVERAGE_REPORTER_VERSION=4.0.5
+  - export CODACY_PROJECT_TOKEN=beea7abb6383471ba4b6906e2db23757
+  - wget https://github.com/codacy/codacy-coverage-reporter/releases/download/${CODACY_COVERAGE_REPORTER_VERSION}/codacy-coverage-reporter-${CODACY_COVERAGE_REPORTER_VERSION}-assembly.jar
+script:
+  - mvn clean install
+after_script:
+  - mvn jacoco:report
+  - java -cp codacy-coverage-reporter-${CODACY_COVERAGE_REPORTER_VERSION}-assembly.jar com.codacy.CodacyCoverageReporter -l Java -r target/site/jacoco/jacoco.xml
