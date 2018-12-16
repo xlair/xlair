@@ -198,7 +198,6 @@ public class XlairCubeTest {
         end = System.nanoTime();
         elapsed = end - start;
         executedTimes.add(elapsed);
-        System.out.println("cube : " + elapsed);
         return result;
     }
 
@@ -208,7 +207,6 @@ public class XlairCubeTest {
         end = System.nanoTime();
         elapsed = end - start;
         executedTimes.add(elapsed);
-        System.out.println("cube : " + elapsed);
         return result;
     }
 }

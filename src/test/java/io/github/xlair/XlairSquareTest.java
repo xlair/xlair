@@ -210,7 +210,6 @@ public class XlairSquareTest {
         end = System.nanoTime();
         elapsed = end - start;
         executedTimes.add(elapsed);
-        System.out.println("Square : " + elapsed);
         return result;
     }
 
@@ -220,7 +219,6 @@ public class XlairSquareTest {
         end = System.nanoTime();
         elapsed = end - start;
         executedTimes.add(elapsed);
-        System.out.println("Square : " + elapsed);
         return result;
     }
 }

@@ -637,7 +637,6 @@ public class XlairPeriodTest {
         end = System.nanoTime();
         elapsed = end - start;
         executedTimes.add(elapsed);
-        System.out.println("Period : " + elapsed);
         return result;
     }
 
@@ -647,7 +646,6 @@ public class XlairPeriodTest {
         end = System.nanoTime();
         elapsed = end - start;
         executedTimes.add(elapsed);
-        System.out.println("Period : " + elapsed);
         return result;
     }
 

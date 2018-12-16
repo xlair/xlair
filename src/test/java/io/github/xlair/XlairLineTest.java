@@ -504,7 +504,6 @@ public class XlairLineTest {
         end = System.nanoTime();
         elapsed = end - start;
         executedTimes.add(elapsed);
-        System.out.println("line : " + elapsed);
         return result;
     }
 
@@ -514,7 +513,6 @@ public class XlairLineTest {
         end = System.nanoTime();
         elapsed = end - start;
         executedTimes.add(elapsed);
-        System.out.println("line : " + elapsed);
         return result;
     }
 

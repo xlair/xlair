@@ -279,7 +279,6 @@ public class XlairD4Test {
         end = System.nanoTime();
         elapsed = end - start;
         executedTimes.add(elapsed);
-        System.out.println("d4 : " + elapsed);
         return result;
     }
 
@@ -289,7 +288,6 @@ public class XlairD4Test {
         end = System.nanoTime();
         elapsed = end - start;
         executedTimes.add(elapsed);
-        System.out.println("d4 : " + elapsed);
         return result;
     }
 }
