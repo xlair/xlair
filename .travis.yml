@@ -5,12 +5,10 @@ addons:
 cache:
   directories:
     - $HOME/.m2
-install:
-  - export CODACY_COVERAGE_REPORTER_VERSION=4.0.5
-  - export CODACY_PROJECT_TOKEN=beea7abb6383471ba4b6906e2db23757
-  - wget https://github.com/codacy/codacy-coverage-reporter/releases/download/${CODACY_COVERAGE_REPORTER_VERSION}/codacy-coverage-reporter-${CODACY_COVERAGE_REPORTER_VERSION}-assembly.jar
+before_install:
+  - sudo apt-get install jq
+  - wget -O ~/codacy-coverage-reporter-assembly-latest.jar $(curl https://api.github.com/repos/codacy/codacy-coverage-reporter/releases/latest | jq -r '.assets[0].browser_download_url')
 script:
   - mvn clean install
-after_script:
-  - mvn jacoco:report
-  - java -cp codacy-coverage-reporter-${CODACY_COVERAGE_REPORTER_VERSION}-assembly.jar com.codacy.CodacyCoverageReporter -l Java -r target/site/jacoco/jacoco.xml
+after_success:
+  - java -jar ~/codacy-coverage-reporter-assembly-latest.jar report -l Java -r target/site/jacoco/jacoco.xml
