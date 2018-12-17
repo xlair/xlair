@@ -38,7 +38,7 @@ public class Period {
     /**
      * Constructor
      * 
-     * @param time     start time point, this value set to time1.
+     * @param start     start time point, this value set to time1.
      * @param interval this value used calculated end time, this value set to
      *                 length.
      */

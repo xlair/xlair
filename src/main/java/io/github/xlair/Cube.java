@@ -201,7 +201,7 @@ public class Cube {
         /**
          * set to width
          * 
-         * @param width
+         * @param width distance from x to other point.
          * @return builder
          */
         public Builder width(long width) {
@@ -212,7 +212,7 @@ public class Cube {
         /**
          * set to height
          * 
-         * @param height
+         * @param height distance from y to other point.
          * @return builder
          */
         public Builder height(long height) {
@@ -223,7 +223,7 @@ public class Cube {
         /**
          * set to depth
          * 
-         * @param depth
+         * @param depth distance from z to other point.
          * @return builder
          */
         public Builder depth(long depth) {
