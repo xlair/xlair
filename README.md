@@ -10,11 +10,11 @@ Determine whether object1 and object2 overlap.
 Object is four-dimensional data.
 The following data are supported.
 
-* Period to Period : temporal distance overlap
-* Line to Line : one-dimension distance overlap
-* Square to Square : two-dimension distance overlap
-* Cube to Cube : three-dimension distance overlap
-* D4 to D4 : four-dimension distance overlap
+  * Period to Period : temporal distance overlap
+  * Line to Line : one-dimension distance overlap
+  * Square to Square : two-dimension distance overlap
+  * Cube to Cube : three-dimension distance overlap
+  * D4 to D4 : four-dimension distance overlap
 
 ## Usage
 
@@ -43,7 +43,7 @@ System.out.println(Xlair.isOverlapOrContact(green, red)); // true
 
 `isOverlapOrContact()` method is `true`, if object contact.
 
-* D4 : Four-dimension = Cude(Three-dimension) + Time-axis.
+  * D4 : Four-dimension = Cude(Three-dimension) + Time-axis.
 
 ```java
 SimpleDateFormat fmt = new SimpleDateFormat("yyyy/MM/dd");
@@ -62,8 +62,8 @@ green and red are not contact, because it is far apart on the time axis.
 
 ## Required
 
-* apache maven
-* JDK 8+
+  * apache maven
+  * JDK 8+
 
 ## Install
 
