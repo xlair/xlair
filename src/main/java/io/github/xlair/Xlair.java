@@ -1,5 +1,14 @@
 package io.github.xlair;
 
+import java.util.List;
+
+import io.github.xlair.collection.AbstractFindOverlaps;
+import io.github.xlair.collection.CubeFindOverlaps;
+import io.github.xlair.collection.D4FindOverlaps;
+import io.github.xlair.collection.LineFindOverlaps;
+import io.github.xlair.collection.PeriodFindOverlaps;
+import io.github.xlair.collection.SquareFindOverlaps;
+
 /**
  * Determine whether object1 and object2 overlap. <br>
  * Object is four-dimensional data. <br>
@@ -13,6 +22,31 @@ package io.github.xlair;
  * </ul>
  */
 public class Xlair {
+
+    /**
+     * create LineFindOverlaps instance for static access
+     */
+    private static final LineFindOverlaps LINE_FIND_OVERLAPS = new LineFindOverlaps();
+
+    /**
+     * create LineFindOverlaps instance for static access
+     */
+    private static final SquareFindOverlaps SQUARE_FIND_OVERLAPS = new SquareFindOverlaps();
+
+    /**
+     * create CubeFindOverlaps instance for static access
+     */
+    private static final CubeFindOverlaps CUBE_FIND_OVERLAPS = new CubeFindOverlaps();
+
+    /**
+     * create D4FindOverlaps instance for static access
+     */
+    private static final D4FindOverlaps D4_FIND_OVERLAPS = new D4FindOverlaps();
+
+    /**
+     * create PeriodFindOverlaps instance for static access
+     */
+    private static final PeriodFindOverlaps PERIOD_FIND_OVERLAPS = new PeriodFindOverlaps();
 
     /**
      * Determine whether disntance1 and disntance2 overlap. <br>
@@ -193,5 +227,125 @@ public class Xlair {
         return isOverlap(d1.getPeriod(), d2.getPeriod()) && isOverlap(d1.getCube().getZLine(), d2.getCube().getZLine())
                 && isOverlap(d1.getCube().getYLine(), d2.getCube().getYLine())
                 && isOverlap(d1.getCube().getXLine(), d2.getCube().getXLine());
+    }
+
+    /**
+     * Find items that overlap from the collection.<br>
+     *
+     * @see AbstractFindOverlaps#findOverlaps(List)
+     *
+     * @param periods Period list for you find overlap item
+     * @return result
+     */
+    public static List<Pair<Period>> findPeriodOverlaps(List<Period> periods) {
+        return PERIOD_FIND_OVERLAPS.findOverlaps(periods);
+    }
+
+    /**
+     * Find items that overlap from the collection.<br>
+     *
+     * @see AbstractFindOverlaps#findOverlapsOrContacts(List)
+     *
+     * @param periods Period list for you find overlap item
+     * @return result
+     */
+    public static List<Pair<Period>> findPeriodOverlapsOrContacts(List<Period> periods) {
+        return PERIOD_FIND_OVERLAPS.findOverlapsOrContacts(periods);
+    }
+
+    /**
+     * Find items that overlap from the collection.<br>
+     *
+     * @see AbstractFindOverlaps#findOverlaps(List)
+     *
+     * @param lines Line list for you find overlap item
+     * @return result
+     */
+    public static List<Pair<Line>> findLineOverlaps(List<Line> lines) {
+        return LINE_FIND_OVERLAPS.findOverlaps(lines);
+    }
+
+    /**
+     * Find items that overlap from the collection.<br>
+     *
+     * @see AbstractFindOverlaps#findOverlapsOrContacts(List)
+     *
+     * @param lines Line list for you find overlap item
+     * @return result
+     */
+    public static List<Pair<Line>> findLineOverlapsOrContacts(List<Line> lines) {
+        return LINE_FIND_OVERLAPS.findOverlapsOrContacts(lines);
+    }
+
+    /**
+     * Find items that overlap from the collection.<br>
+     *
+     * @see AbstractFindOverlaps#findOverlaps(List)
+     *
+     * @param squares Square list for you find overlap item
+     * @return result
+     */
+    public static List<Pair<Square>> findSquareOverlaps(List<Square> squares) {
+        return SQUARE_FIND_OVERLAPS.findOverlaps(squares);
+    }
+
+    /**
+     * Find items that overlap from the collection.<br>
+     *
+     * @see AbstractFindOverlaps#findOverlapsOrContacts(List)
+     *
+     * @param squares Square list for you find overlap item
+     * @return result
+     */
+    public static List<Pair<Square>> findSquareOverlapsOrContacts(List<Square> squares) {
+        return SQUARE_FIND_OVERLAPS.findOverlapsOrContacts(squares);
+    }
+
+    /**
+     * Find items that overlap from the collection.<br>
+     *
+     * @see AbstractFindOverlaps#findOverlaps(List)
+     *
+     * @param cubes Cube list for you find overlap item
+     * @return result
+     */
+    public static List<Pair<Cube>> findCubeOverlaps(List<Cube> cubes) {
+        return CUBE_FIND_OVERLAPS.findOverlaps(cubes);
+    }
+
+    /**
+     * Find items that overlap from the collection.<br>
+     *
+     * @see AbstractFindOverlaps#findOverlapsOrContacts(List)
+     *
+     * @param cubes Cube list for you find overlap item
+     * @return result
+     */
+    public static List<Pair<Cube>> findCubeOverlapsOrContacts(List<Cube> cubes) {
+        return CUBE_FIND_OVERLAPS.findOverlapsOrContacts(cubes);
+    }
+
+    /**
+     * Find items that overlap from the collection.<br>
+     *
+     * @see AbstractFindOverlaps#findOverlaps(List)
+     *
+     * @param d4s D4 list for you find overlap item
+     * @return result
+     */
+    public static List<Pair<D4>> findD4Overlaps(List<D4> d4s) {
+        return D4_FIND_OVERLAPS.findOverlaps(d4s);
+    }
+
+    /**
+     * Find items that overlap from the collection.<br>
+     *
+     * @see AbstractFindOverlaps#findOverlapsOrContacts(List)
+     *
+     * @param d4s D4 list for you find overlap item
+     * @return result
+     */
+    public static List<Pair<D4>> findD4OverlapsOrContacts(List<D4> d4s) {
+        return D4_FIND_OVERLAPS.findOverlapsOrContacts(d4s);
     }
 }

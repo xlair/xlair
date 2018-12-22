@@ -2,21 +2,11 @@ package io.github.xlair;
 
 import static org.junit.Assert.*;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.stream.Collectors;
-
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-public class XlairCubeTest {
-
-    private static List<Long> executedTimes = new ArrayList<>();
-
-    private long start;
-    private long end;
-    private long elapsed;
+public class XlairCubeTest extends XlairTestBase {
 
     @BeforeClass
     public static void setUpBeforeClass() throws Exception {
@@ -26,8 +16,7 @@ public class XlairCubeTest {
 
     @AfterClass
     public static void tearDownAfterClass() throws Exception {
-        Double reult = executedTimes.stream().collect(Collectors.averagingLong(Long::longValue));
-        System.out.println("[AVERAGE] : " + reult + " (ns)");
+        showAverage("Cube");
     }
 
     @Test
@@ -192,21 +181,5 @@ public class XlairCubeTest {
         assertFalse(isOverlapOrContactWrapper(c2, c1));
     }
 
-    private boolean isOverlapWrapper(Cube c1, Cube c2) {
-        start = System.nanoTime();
-        boolean result = Xlair.isOverlap(c1, c2);
-        end = System.nanoTime();
-        elapsed = end - start;
-        executedTimes.add(elapsed);
-        return result;
-    }
 
-    private boolean isOverlapOrContactWrapper(Cube c1, Cube c2) {
-        start = System.nanoTime();
-        boolean result = Xlair.isOverlapOrContact(c1, c2);
-        end = System.nanoTime();
-        elapsed = end - start;
-        executedTimes.add(elapsed);
-        return result;
-    }
 }

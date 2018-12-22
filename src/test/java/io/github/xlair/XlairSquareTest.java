@@ -2,21 +2,11 @@ package io.github.xlair;
 
 import static org.junit.Assert.*;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.stream.Collectors;
-
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-public class XlairSquareTest {
-
-    private static List<Long> executedTimes = new ArrayList<>();
-
-    private long start;
-    private long end;
-    private long elapsed;
+public class XlairSquareTest extends XlairTestBase {
 
     @BeforeClass
     public static void setUpBeforeClass() throws Exception {
@@ -26,8 +16,7 @@ public class XlairSquareTest {
 
     @AfterClass
     public static void tearDownAfterClass() throws Exception {
-        Double reult = executedTimes.stream().collect(Collectors.averagingLong(Long::longValue));
-        System.out.println("[AVERAGE] : " + reult + " (ns)");
+        showAverage("Square");
     }
 
     @Test
@@ -202,23 +191,5 @@ public class XlairSquareTest {
 
         assertTrue(isOverlapWrapper(s1, s2));
         assertTrue(isOverlapWrapper(s2, s1));
-    }
-
-    private boolean isOverlapWrapper(Square s1, Square s2) {
-        start = System.nanoTime();
-        boolean result = Xlair.isOverlap(s1, s2);
-        end = System.nanoTime();
-        elapsed = end - start;
-        executedTimes.add(elapsed);
-        return result;
-    }
-
-    private boolean isOverlapOrContactWrapper(Square s1, Square s2) {
-        start = System.nanoTime();
-        boolean result = Xlair.isOverlapOrContact(s1, s2);
-        end = System.nanoTime();
-        elapsed = end - start;
-        executedTimes.add(elapsed);
-        return result;
     }
 }
